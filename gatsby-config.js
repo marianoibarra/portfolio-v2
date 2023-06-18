@@ -1,12 +1,15 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: `My portfolio - Mariano Ibarra`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.marianoibarra.com`
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-google-gtag", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  //TO-DO "gatsby-plugin-google-gtag" config
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
@@ -25,5 +28,28 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  },
+  {
+    resolve: `gatsby-plugin-alias-imports`,
+    options: {
+      alias: {
+        // "@src": "src",
+        // "@components": "src/components",
+        // "@layouts": "src/layouts",
+        // "@pages": "src/pages",
+        // "@templates": "src/templates",
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@fonts': path.resolve(__dirname, 'src/fonts'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@images': path.resolve(__dirname, 'src/images'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@styles': path.resolve(__dirname, 'src/styles'),
+        '@utils': path.resolve(__dirname, 'src/utils'),
+      },
+      extensions: [
+        "js", "jsx"
+      ],
+    }
   }]
 };
