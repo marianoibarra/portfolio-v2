@@ -10,6 +10,7 @@ const StyledContent = styled.div`
   margin: 0 auto;
   padding: 0px var(--body-padding);
   display: flex;
+  counter-reset: section 0;
 
   header {
     position: sticky;
