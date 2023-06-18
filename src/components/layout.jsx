@@ -23,9 +23,9 @@ const StyledContent = styled.div`
     padding: var(--body-padding) 0;
   }
 
-  & #content {
+  main {
     width: 50%;
-    padding: var(--body-padding) 0;
+    padding: 0;
   }
 
 `;
@@ -44,9 +44,9 @@ const Layout = ({children}) => {
               <Nav />
               <Social />
             </header>
-            <div id='content'>
+            <main id='content'>
               { children }
-            </div>
+            </main>
 
           </StyledContent>
         </ThemeProvider>

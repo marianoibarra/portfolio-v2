@@ -11,11 +11,12 @@ const StyledNav = styled.nav`
 `
 
 const StyledLink = styled.li`
-
+  width: min-content;
   margin-bottom: 18px;
   font-size: var(--fz-sm) !important;
   font-family: var(--font-mono);
   font-weight: 600;
+  color: ${({active}) => active ? 'var(--white)' : 'inherit'};
 
   a {
     display: flex;
@@ -28,7 +29,7 @@ const StyledLink = styled.li`
     display: inline-block;
     height: 1px;
     transition: var(--transition);
-    background-color: ${({active}) => active ? 'white' : '#fff4'};
+    background-color: ${({active}) => active ? 'var(--white)' : 'var(--dark-slate)'};
     width: ${({active}) => active ? '2rem' : '1rem'};
   }
 
@@ -43,7 +44,7 @@ const StyledLink = styled.li`
   &:hover {
     span:first-child {
       width: 2rem;
-      background-color: white;
+      background-color: var(--white);
     }
   }
 

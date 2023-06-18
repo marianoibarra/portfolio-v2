@@ -2,6 +2,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 const path = require('path')
+// const config = require('./src/config')
 
 module.exports = {
   siteMetadata: {
@@ -14,13 +15,6 @@ module.exports = {
     options: {
       "icon": "src/images/icon.png"
     }
-  }, "gatsby-transformer-remark", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
-    },
-    __key: "images"
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -29,6 +23,56 @@ module.exports = {
     },
     __key: "pages"
   },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
+    },
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'content',
+      path: `${__dirname}/content/`,
+    },
+  },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `projects`,
+      path: `${__dirname}/content/projects`,
+    },
+  },
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        // {
+        //   // https://www.gatsbyjs.org/packages/gatsby-remark-external-links
+        //   resolve: 'gatsby-remark-external-links',
+        //   options: {
+        //     target: '_blank',
+        //     rel: 'nofollow noopener noreferrer',
+        //   },
+        // },
+        {
+          // https://www.gatsbyjs.org/packages/gatsby-remark-images
+          resolve: 'gatsby-remark-images',
+          options: {
+            maxWidth: 700,
+            linkImagesToOriginal: true,
+            quality: 90,
+            tracedSVG: { color: '#11aa11' },
+          },
+        },
+        {
+          // https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/
+          resolve: 'gatsby-remark-code-titles',
+        }, // IMPORTANT: this must be ahead of other plugins that use code blocks
+      ],
+    },
+  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp",
   {
     resolve: `gatsby-plugin-alias-imports`,
     options: {

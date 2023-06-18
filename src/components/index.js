@@ -4,4 +4,6 @@ export { default as Nav } from "./nav";
 export { default as Hero } from "./hero";
 export { default as Social } from "./social";
 export { default as Section } from "./sections/text";
+export { default as About } from "./sections/about";
+export { default as Projects } from "./sections/projects";
 export { default as MouseEffect } from "./mouseEffect";

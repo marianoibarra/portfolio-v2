@@ -19,8 +19,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--green);
+    color: var(--navy);
   }
 
   /* Provide basic, default focus styles.*/
@@ -64,6 +64,13 @@ const GlobalStyle = createGlobalStyle`
     border: 3px solid var(--navy);
     border-radius: 10px;
   }
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: var(--slate);
+  }
+  ::-webkit-scrollbar-thumb:active {
+    border: 4px solid var(--navy);
+  }
+
 
   body {
     margin: 0;
@@ -141,10 +148,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  strong:hover {
+    text-decoration: underline;
+  }
+
   section {
     margin: 0 auto;
     width: 100%;
-    padding: 0 0 80px;
+    padding: 96px 0 14px;
 
     @media (max-width: 768px) {
       padding: 80px 0;

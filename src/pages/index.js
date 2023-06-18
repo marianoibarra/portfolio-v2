@@ -1,16 +1,15 @@
-import React from 'react'
-import { Layout, Section } from '@components'
-import { navLinks } from '../config'
-import About from '@sections/about'
-
+import React from "react";
+import { Layout, Section, About, Projects } from "@components";
+import { navLinks } from "../config";
 
 const IndexPage = () => {
   return (
     <Layout>
       <About />
-      {navLinks.slice(1).map(section => <Section n={section.url.slice(2)} title={section.name} />)}
+      <Projects />
+      {navLinks.slice(1).map((section) => <Section n={section.url.slice(2)} title={section.name} />)}
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

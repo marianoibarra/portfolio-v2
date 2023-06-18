@@ -27,5 +27,10 @@ module.exports = {
       url: '/#projects',
     },
   ],
-  sectionHeightRatio: 0.35
+  sectionHeightRatio: 0.35,
+  colors: {
+    green: '#64ffda',
+    navy: '#0a192f',
+    darkNavy: '#020c1b',
+  },
 }

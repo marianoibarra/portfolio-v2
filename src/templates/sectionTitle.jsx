@@ -11,10 +11,12 @@ const Title = styled.h3`
     white-space: nowrap;
     text-transform: capitalize;
     counter-increment: section;
+    color: var(--white);
+    margin-top: 0;
 
     &:before {
       position: relative;
-      bottom: 0px;
+      bottom: -1px;
       content: '0' counter(section) '.';
       margin-right: 10px;
       color: var(--green);
@@ -32,7 +34,7 @@ const Title = styled.h3`
       content: '';
       display: block;
       position: relative;
-      top: 0px;
+      top: 2px;
       width: 100%;
       height: 1px;
       margin-left: 20px;
