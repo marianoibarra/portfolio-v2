@@ -2,7 +2,8 @@ import React from "react";
 import { styled } from "styled-components";
 
 const StyledHero = styled.div`
-
+  cursor: default;
+  
   h1 {
     font-size: var(--fz-heading1);
     letter-spacing: -1.2px;

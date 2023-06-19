@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import { SectionTitle } from "@elements";
 import { ProjectCard } from "@components";
 import { PROJECTS_LIMIT } from "../../config";
+import FancyLink from "../elements/FancyLink";
 
 const StyledProjects = styled.section`
   width: 100%;
@@ -55,7 +56,9 @@ const Projects = () => {
       <ol>
       { projectsToShow.map((project, i) => <ProjectCard key={i} project={project} />) }
       </ol>
-      <button style={{marginTop: '96px'}} onClick={() => setShowMore(!showMore)}>{showMore ? 'Show less' : 'Show more'}</button>
+      {!showMore && <FancyLink mt={56} onClick={() => setShowMore(!showMore)}>
+        {showMore ? 'Show less' : 'Show more'}
+      </FancyLink>}
     </StyledProjects>
   );
 };

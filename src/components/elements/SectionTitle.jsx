@@ -12,6 +12,7 @@ export const SectionTitle = styled.h3`
   counter-increment: section;
   color: var(--white);
   margin-top: 0;
+  cursor: default;
 
   &:before {
     position: relative;

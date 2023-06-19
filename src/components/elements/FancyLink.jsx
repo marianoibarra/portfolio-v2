@@ -9,6 +9,8 @@ const Styled = styled.div`
   color: var(--white);
   font-weight: 500;
   opacity: .85;
+  margin-top: ${({mt}) => mt+'px' || 'none'};
+  cursor: pointer;
 
   > span {
     display: inline-block;
@@ -51,9 +53,9 @@ const Styled = styled.div`
   }
 `
 
-const FancyLink = ({ onClick=()=>{}, icon='Arrow', children }) => {
+const FancyLink = ({ onClick=()=>{}, icon='Arrow', mt, children }) => {
   return (
-    <Styled onClick={onClick}>
+    <Styled {...{mt, onClick}}>
       <span>
         {children}
       </span>

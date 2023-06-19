@@ -170,11 +170,11 @@ const GlobalStyle = createGlobalStyle`
       content: '';
       display: block;
       width: 0;
-      height: 1px;
+      height: 2px;
       position: relative;
-      left: 1%;
-      bottom: 0.27em;
-      background-color: var(--white);
+      left: 0%;
+      bottom: 0.2em;
+      background-color: var(--green);
       opacity: 0.5;
       @media (prefers-reduced-motion: no-preference) {
         transition: var(--transition);

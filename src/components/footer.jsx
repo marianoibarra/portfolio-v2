@@ -6,6 +6,7 @@ const StyledFooter = styled.footer`
   font-size: var(--fz-sm);
   color: var(--dark-slate);
   margin-top: 128px;
+  cursor: default;
   a {
     color: var(--slate);
   }

@@ -18,7 +18,6 @@ const StyledJobs = styled.section`
   }
 
   > a {
-    margin-top: 56px;
     width: fit-content;
   }
 `;
@@ -54,7 +53,7 @@ const Jobs = () => {
       { jobs.map(job => <JobCard job={job} />) }
       </ol>
       <a href="/download/resume.pdf" download="Resume - Mariano Ibarra.pdf">
-        <FancyLink>
+        <FancyLink mt={56}>
           View Full Resume
         </FancyLink>
       </a>

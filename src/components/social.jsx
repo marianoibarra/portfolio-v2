@@ -17,7 +17,6 @@ const StyledSocial = styled.ul`
   
   svg {
     height: 28px;
-    width: 28px;
   }
 `
 
