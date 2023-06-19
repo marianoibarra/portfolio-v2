@@ -1,15 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-import SectionTitle from "@templates/sectionTitle";
+import { FancyList, SectionTitle } from "@elements";
 
 const StyledText = styled.div`
   font-size: var(--fz-md);
   line-height: 26px;
   margin-bottom: 24px;
-
-  strong {
-    color: var(--white);
-  }
+  cursor: default;
 `;
 
 const LetterHighlight = styled.span`
@@ -19,7 +16,7 @@ const LetterHighlight = styled.span`
 `
 
 const StyledHighlightHover = styled.span`
-  cursor: url(/images/balti/balti.png),auto !important;
+  cursor: url(/images/balti/balti.png),default !important;
   position: relative;
   display: inline-flex;
 
@@ -36,34 +33,6 @@ const StyledHighlightHover = styled.span`
     overflow: hidden;
   }
 `
-
-const StyledSkills = styled.ul`
-  font-size: var(--fz-md);
-  columns: 3;
-
-  li {
-    position: relative;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    font-family: var(--font-mono);
-    font-size: var(--fz-xs);
-    transition: var(--transition);
-    cursor: default;
-
-    &:hover {
-      color: var(--white);
-    }
-
-    &:before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-size: var(--fz-sm);
-      line-height: 12px;
-    }
-  }
-`;
 
 const HighlightHover = ({children}) => {
   if(typeof children !== 'string') return null;
@@ -93,7 +62,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <SectionTitle title={"About"} />
+      <SectionTitle>About</SectionTitle>
       <StyledText>
         <p>
           <strong>Fullstack developer</strong>, with experience in both web projects and mobile. I am passionate about creating
@@ -112,9 +81,9 @@ const About = () => {
         <p>When I'm not at the computer, you'll usually find me cycling, reading, or having fun with <HighlightHover>Balti</HighlightHover>.</p>
         <p>Here are a few technologies I’ve been working with recently:</p>
       </StyledText>
-      <StyledSkills>
+      <FancyList columns={3}>
         {skills.map((skill) => <li>{skill}</li>)}
-      </StyledSkills>
+      </FancyList>
     </section>
   );
 };

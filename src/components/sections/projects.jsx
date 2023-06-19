@@ -1,9 +1,24 @@
 import React from "react";
-import SectionTitle from "@templates/sectionTitle";
-import { styled } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
+import { styled } from "styled-components";
+import { SectionTitle } from "@elements";
+import { ProjectCard } from "@components";
 
-const StyledProjects = styled.section``;
+const StyledProjects = styled.section`
+
+  div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  > ol {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+`;
 
 const Projects = () => {
   const data = useStaticQuery(graphql`
@@ -18,7 +33,7 @@ const Projects = () => {
               title
               cover {
                 childImageSharp {
-                  gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                  gatsbyImageData(width: 200, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 }
               }
               tech
@@ -32,11 +47,13 @@ const Projects = () => {
     }
   `);
 
-  const projects = data.projects.edges.filter(({ node }) => node);
-  console.log(projects);
+  const projects = data.projects.edges.map(({ node }) => node);
   return (
-    <StyledProjects>
-      <SectionTitle title="Projects" />
+    <StyledProjects id="projects">
+      <SectionTitle>Projects</SectionTitle>
+      <ol>
+      { projects.map(project => <ProjectCard project={project} />) }
+      </ol>
     </StyledProjects>
   );
 };

@@ -1,0 +1,66 @@
+import React from 'react'
+import { SectionCard, ChipList, CardData } from '@elements'
+import { styled } from 'styled-components'
+import { Icon } from "@components/icons";
+
+const StyledCard = styled(SectionCard)`
+  > header {
+    grid-column: 1/2;
+    font-size: var(--fz-xxs);
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--dark-slate);
+    font-weight: 600;
+  }
+  
+`
+
+const Data = styled(CardData)`
+
+  > h3 > a {
+    color: var(--light-slate);
+    &:hover,
+    &:focus-visible {
+      color: var(--green);
+    }
+    &::before {
+      position: relative;
+      bottom: 2px;
+      margin-inline: 8px;
+      margin-left: 8px;
+      margin-right: 4px;
+      font-size: var(--fz-sm);
+      color: var(--green);
+      content: "@"
+    }
+  }
+`
+
+const JobCard = ({job}) => {
+  const { frontmatter: { title, company, tech, range, url }, html } = job;
+  return (
+    <StyledCard>
+      <header>{range}</header>
+      <Data>
+        <h3>
+          {title}
+          <a href={url}>
+            {company}
+            <Icon />
+            <span />
+          </a>
+        </h3>
+        <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+        {tech && tech.length && 
+          <ChipList>
+            {tech.map((t, i) => <li key={i}>{t}</li>)}
+          </ChipList>
+        }
+      </Data>
+    </StyledCard>
+  )
+}
+
+export default JobCard

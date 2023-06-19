@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import fonts from './fonts';
 import variables from './variables';
-
 const GlobalStyle = createGlobalStyle`
   ${fonts};
   ${variables};
@@ -148,8 +147,39 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  strong:hover {
-    text-decoration: underline;
+  strong {
+    display: inline-block;
+    position: relative;
+    color: var(--white);
+    opacity: .85;
+    transition: var(--transition);
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+      color: var(--white);
+      outline: 0;
+      &:after {
+        width: 98%;
+      }
+      & > * {
+        color: var(--white) !important;
+        transition: var(--transition);
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      position: relative;
+      left: 1%;
+      bottom: 0.27em;
+      background-color: var(--white);
+      opacity: 0.5;
+      @media (prefers-reduced-motion: no-preference) {
+        transition: var(--transition);
+      }
+    }
   }
 
   section {
@@ -224,27 +254,6 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  button {
-    cursor: pointer;
-    border: 0;
-    border-radius: 0;
-  }
-
-  input, textarea {
-    border-radius: 0;
-    outline: 0;
-
-    &:focus {
-      outline: 0;
-    }
-    &:focus,
-    &:active {
-      &::placeholder {
-        opacity: 0.5;
-      }
-    }
-  }
-
   p {
     margin: 0 0 15px 0;
 
@@ -256,14 +265,6 @@ const GlobalStyle = createGlobalStyle`
     & > a {
       ${({ theme }) => theme.mixins.inlineLink};
     }
-
-    & > code {
-      background-color: var(--light-navy);
-      color: var(--white);
-      font-size: var(--fz-sm);
-      border-radius: var(--border-radius);
-      padding: 0.3em 0.5em;
-    }
   }
 
   li {
@@ -272,141 +273,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  ul {
+  ul, ol {
     margin: 0;
     padding: 0;
-  }
-
-  ul {
-    &.fancy-list {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      font-size: var(--fz-lg);
-      li {
-        position: relative;
-        padding-left: 30px;
-        margin-bottom: 10px;
-        &:before {
-          content: '▹';
-          position: absolute;
-          left: 0;
-          color: var(--green);
-        }
-      }
-    }
-  }
-
-  blockquote {
-    border-left-color: var(--green);
-    border-left-style: solid;
-    border-left-width: 1px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 1.5rem;
-
-    p {
-      font-style: italic;
-      font-size: 24px;
-    }
-  }
-
-  hr {
-    background-color: var(--lightest-navy);
-    height: 1px;
-    border-width: 0px;
-    border-style: initial;
-    border-color: initial;
-    border-image: initial;
-    margin: 1rem;
-  }
-
-  code {
-    font-family: var(--font-mono);
-    font-size: var(--fz-md);
-  }
-
-  .skip-to-content {
-    ${({ theme }) => theme.mixins.button};
-    position: absolute;
-    top: auto;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    z-index: -99;
-
-    &:hover,
-    &:focus {
-      background-color: var(--green);
-      color: var(--navy);
-      top: 0;
-      left: 0;
-      width: auto;
-      height: auto;
-      overflow: auto;
-      z-index: 99;
-      box-shadow: none;
-      transform: none;
-    }
-  }
-
-  #logo {
-    color: var(--green);
-  }
-
-  .overline {
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: var(--fz-md);
-    font-weight: 400;
-  }
-
-  .subtitle {
-    color: var(--green);
-    margin: 0 0 20px 0;
-    font-size: var(--fz-md);
-    font-family: var(--font-mono);
-    font-weight: 400;
-    line-height: 1.5;
-    @media (max-width: 1080px) {
-      font-size: var(--fz-sm);
-    }
-    @media (max-width: 768px) {
-      font-size: var(--fz-xs);
-    }
-
-    a {
-      ${({ theme }) => theme.mixins.inlineLink};
-      line-height: 1.5;
-    }
-  }
-
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
-    color: var(--green);
-
-    .arrow {
-      display: block;
-      margin-right: 10px;
-      padding-top: 4px;
-    }
-
-    a {
-      ${({ theme }) => theme.mixins.inlineLink};
-      font-family: var(--font-mono);
-      font-size: var(--fz-sm);
-      font-weight: 600;
-      line-height: 1.5;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-  }
-
-  .gatsby-image-outer-wrapper {
-    height: 100%;
   }
 
 `;

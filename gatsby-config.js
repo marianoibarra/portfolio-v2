@@ -2,19 +2,25 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 const path = require('path')
-// const config = require('./src/config')
+const config = require('./src/config')
 
 module.exports = {
   siteMetadata: {
-    title: `My portfolio - Mariano Ibarra`,
+    title: `Mariano Ibarra`,
     siteUrl: `https://www.marianoibarra.com`
   },
   //TO-DO "gatsby-plugin-google-gtag" config
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", {
+    resolve: `gatsby-plugin-manifest`,
     options: {
-      "icon": "src/images/icon.png"
-    }
+      name: 'Mariano Ibarra',
+      short_name: 'Mariano Ibarra',
+      start_url: '/',
+      background_color: config.colors.darkNavy,
+      theme_color: config.colors.navy,
+      display: 'minimal-ui',
+      icon: "src/images/icon.png"
+    },
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
@@ -78,8 +84,7 @@ module.exports = {
     options: {
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
-        '@sections': path.resolve(__dirname, 'src/components/sections'),
-        '@templates': path.resolve(__dirname, 'src/templates'),
+        '@elements': path.resolve(__dirname, 'src/components/elements'),
         '@config': path.resolve(__dirname, 'src/config'),
         '@fonts': path.resolve(__dirname, 'src/fonts'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),

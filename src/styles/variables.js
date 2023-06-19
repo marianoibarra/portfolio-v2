@@ -7,10 +7,13 @@ const variables = css`
     --light-navy: #112240;
     --lightest-navy: #233554;
     --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #475569;
+    --dark-slate: #64748b;
+    --darkest-slate: #172539;
     --slate: #94a3b8;
     --light-slate: #a8b2d1;
     --lightest-slate: #ccd6f6;
+    --img-border: 2px solid rgba(226,232,240,.1);
+    --img-border-hover: 2px solid rgba(226,232,240,.3);
     --white: #e2e8f0;
     --green: #64ffda;
     --green-tint: rgba(100, 255, 218, 0.1);

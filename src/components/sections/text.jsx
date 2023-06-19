@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import SectionTitle from '../../templates/sectionTitle'
+import { SectionTitle } from "@elements";
 
 const Div = styled.section`
   height: 1500px;
@@ -9,7 +9,7 @@ const Div = styled.section`
 const Section = ({n, title}) => {
   return (
     <Div id={n}>
-      <SectionTitle title={title} />
+      <SectionTitle>{title}</SectionTitle>
     </Div>
   )
 }

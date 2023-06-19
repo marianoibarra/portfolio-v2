@@ -1,5 +1,6 @@
 import React from 'react'
-import { Head, MouseEffect, Nav, Social, Hero } from '@components';
+import { Head, Nav, Social, Hero, Footer } from '@components';
+import { MouseEffect } from '@elements';
 import { GlobalStyle, theme } from '@styles';
 import { ThemeProvider, styled } from 'styled-components';
 
@@ -12,7 +13,7 @@ const StyledContent = styled.div`
   display: flex;
   counter-reset: section 0;
 
-  header {
+  > header {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -23,11 +24,11 @@ const StyledContent = styled.div`
     padding: var(--body-padding) 0;
   }
 
-  main {
+  > main {
     width: 50%;
     padding: 0;
+    padding-bottom: var(--body-padding);
   }
-
 `;
 
 const Layout = ({children}) => {
@@ -46,11 +47,10 @@ const Layout = ({children}) => {
             </header>
             <main id='content'>
               { children }
+              <Footer />
             </main>
-
           </StyledContent>
         </ThemeProvider>
-
       </div>
     </>
   )

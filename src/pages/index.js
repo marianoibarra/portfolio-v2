@@ -1,13 +1,12 @@
 import React from "react";
-import { Layout, Section, About, Projects } from "@components";
-import { navLinks } from "../config";
+import { Layout, Jobs, About, Projects } from "@components";
 
 const IndexPage = () => {
   return (
     <Layout>
       <About />
+      <Jobs />
       <Projects />
-      {navLinks.slice(1).map((section) => <Section n={section.url.slice(2)} title={section.name} />)}
     </Layout>
   );
 };
