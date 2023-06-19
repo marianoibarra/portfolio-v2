@@ -3,20 +3,23 @@ import { graphql, useStaticQuery } from "gatsby";
 import { styled } from "styled-components";
 import { SectionTitle } from "@elements";
 import { JobCard } from "@components";
+import FancyLink from "../elements/FancyLink";
 
 const StyledJobs = styled.section`
-
-  div {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 
   > ol {
     display: flex;
     flex-direction: column;
     gap: 48px;
+  }
+
+  > a {
+    margin-top: 56px;
+    width: fit-content;
   }
 `;
 
@@ -50,6 +53,11 @@ const Jobs = () => {
       <ol>
       { jobs.map(job => <JobCard job={job} />) }
       </ol>
+      <a href="/download/resume.pdf" download="Resume - Mariano Ibarra.pdf">
+        <FancyLink>
+          View Full Resume
+        </FancyLink>
+      </a>
     </StyledJobs>
   );
 };

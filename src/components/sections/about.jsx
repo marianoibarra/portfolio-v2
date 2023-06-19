@@ -16,7 +16,7 @@ const LetterHighlight = styled.span`
 `
 
 const StyledHighlightHover = styled.span`
-  cursor: url(/images/balti/balti.png),default !important;
+  cursor: url(/cursor/balti.png),default !important;
   position: relative;
   display: inline-flex;
 

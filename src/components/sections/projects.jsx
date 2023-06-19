@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { styled } from "styled-components";
 import { SectionTitle } from "@elements";
 import { ProjectCard } from "@components";
+import { PROJECTS_LIMIT } from "../../config";
 
 const StyledProjects = styled.section`
-
-  div {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 
   > ol {
     display: flex;
@@ -21,11 +19,12 @@ const StyledProjects = styled.section`
 `;
 
 const Projects = () => {
+  const [showMore, setShowMore] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       projects: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/projects/" } }
-        sort: { fields: [frontmatter___date], order: ASC }
+        sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
           node {
@@ -48,12 +47,15 @@ const Projects = () => {
   `);
 
   const projects = data.projects.edges.map(({ node }) => node);
+  const firstProjects = projects.slice(0, PROJECTS_LIMIT);
+  const projectsToShow = showMore ? projects : firstProjects;
   return (
     <StyledProjects id="projects">
       <SectionTitle>Projects</SectionTitle>
       <ol>
-      { projects.map(project => <ProjectCard project={project} />) }
+      { projectsToShow.map((project, i) => <ProjectCard key={i} project={project} />) }
       </ol>
+      <button style={{marginTop: '96px'}} onClick={() => setShowMore(!showMore)}>{showMore ? 'Show less' : 'Show more'}</button>
     </StyledProjects>
   );
 };

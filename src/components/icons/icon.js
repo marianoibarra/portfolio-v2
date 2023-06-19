@@ -17,11 +17,14 @@ import {
   IconTwitter,
   IconEmail
 } from '@components/icons';
+import { IconArrow } from '.';
 
 const Icon = ({ name }) => {
   switch (name) {
     case 'AppStore':
       return <IconAppStore />;
+    case 'Arrow':
+      return <IconArrow />;
     case 'Bookmark':
       return <IconBookmark />;
     case 'Codepen':

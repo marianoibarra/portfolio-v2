@@ -1,5 +1,5 @@
 module.exports = {
-  socialMedia: [
+  SOCIAL_MEDIA: [
     {
       name: 'GitHub',
       url: 'https://github.com/MarianoIT1',
@@ -13,7 +13,7 @@ module.exports = {
       url: 'mailto:marianoibarratesta@outlook.com',
     },
   ],
-  navLinks: [
+  NAV_LINKS: [
     {
       name: 'About',
       url: '/#about',
@@ -27,7 +27,8 @@ module.exports = {
       url: '/#projects',
     },
   ],
-  sectionHeightRatio: 0.35,
+  SECTION_HEIGHT_RATIO: 0.35,
+  PROJECTS_LIMIT: 3,
   colors: {
     green: '#64ffda',
     navy: '#0a192f',

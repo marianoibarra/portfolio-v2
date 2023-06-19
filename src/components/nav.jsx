@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
-import { sectionHeightRatio } from '@config'
-import { navLinks } from '../config'
+import { SECTION_HEIGHT_RATIO } from '@config'
+import { NAV_LINKS } from '../config'
 import { Link } from 'gatsby'
 
 const StyledNav = styled.nav`
@@ -51,7 +51,7 @@ const StyledLink = styled.li`
 `
 
 const Nav = () => {
-  const [sectionActive, setSectionActive] = useState(navLinks[0].url)
+  const [sectionActive, setSectionActive] = useState(NAV_LINKS[0].url)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +59,7 @@ const Nav = () => {
       
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight*sectionHeightRatio && rect.bottom > window.innerHeight*sectionHeightRatio) {
+        if (rect.top <= window.innerHeight*SECTION_HEIGHT_RATIO && rect.bottom > window.innerHeight*SECTION_HEIGHT_RATIO) {
           setSectionActive('/#' + section.id)
         }
       });
@@ -72,7 +72,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <ul>
-        {navLinks.map(({name, url}) => 
+        {NAV_LINKS.map(({name, url}) => 
           <StyledLink active={Boolean(sectionActive === url)}>
             <Link href={url}>
               <span/>

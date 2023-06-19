@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import { socialMedia } from '@config';
+import { SOCIAL_MEDIA } from '@config';
 import { Icon } from '@components/icons';
 
 const StyledSocial = styled.ul`
@@ -25,7 +25,7 @@ const Social = () => {
   return (
     <StyledSocial>
       {
-        socialMedia.map(({name, url}) => 
+        SOCIAL_MEDIA.map(({name, url}) => 
           <li>
             <a href={url}>
               <Icon name={name} />

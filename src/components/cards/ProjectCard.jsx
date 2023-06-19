@@ -4,17 +4,12 @@ import { styled } from "styled-components";
 import { Icon } from "@components/icons";
 import { ChipList, SectionCard, CardData } from '@elements'
 
-const StyledCard = styled(SectionCard)`
-
-`;
-
 const HoverGlass = styled.span`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  transform: scale(106%, 125%);
+  width: calc(100% + 42px);
+  height: calc(100% + 42px);
+  left: -21px;
+  top: -21px;
   border-radius: 6px;
   border-top: 1px solid #fff1;
   z-index: 1;
@@ -30,19 +25,23 @@ const HoverGlass = styled.span`
 
 `
 
-const Cover = styled.div`
-  grid-column: 1/2;
-  width: 120px;
-  display: flex;
-
-  & picture > img {
+const StyledCard = styled(SectionCard)`
+  .gatsby-image-wrapper {
+    display: flex;
+    width: 120px;
+    height: min-content;
+    grid-column: 1/2;
     border-radius: 4px;
     overflow: hidden;
     border: var(--img-border);
-    width: 120px;
     background-color: var(--darkest-slate);
+    transition: all 150ms var(--easing);
+  }  
+
+  &:has(${HoverGlass}:hover) .gatsby-image-wrapper {
+    border: var(--img-border-hover);
   }
-`
+`;
 
 const Data = styled(CardData)`
   .github {
@@ -74,9 +73,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <StyledCard>
-      <Cover>
-        <GatsbyImage objectFit="cover" image={image} alt={title} className="img" />
-      </Cover>
+      <GatsbyImage objectFit="cover" image={image} alt={title} className="img" />
       <Data>
         <h3>
           <a href={external}>
@@ -92,7 +89,7 @@ const ProjectCard = ({ project }) => {
               Source code
             </a>
           }
-          { tech.length && 
+          { tech && tech.length && 
             <ChipList>
               {tech.map((t, i) => <li key={i}>{t}</li>)}
             </ChipList>
