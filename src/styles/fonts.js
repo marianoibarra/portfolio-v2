@@ -18,8 +18,8 @@ import InterRegularWoff from '@fonts/Inter/Inter-Regular.woff';
 import InterRegularWoff2 from '@fonts/Inter/Inter-Regular.woff2';
 import InterMediumWoff from '@fonts/Inter/Inter-Medium.woff';
 import InterMediumWoff2 from '@fonts/Inter/Inter-Medium.woff2';
-import InterSemiboldWoff from '@fonts/Inter/Inter-Semibold.woff';
-import InterSemiboldWoff2 from '@fonts/Inter/Inter-Semibold.woff2';
+import InterSemiboldWoff from '@fonts/Inter/Inter-SemiBold.woff';
+import InterSemiboldWoff2 from '@fonts/Inter/Inter-SemiBold.woff2';
 import InterBoldWoff from '@fonts/Inter/Inter-Bold.woff';
 import InterBoldWoff2 from '@fonts/Inter/Inter-Bold.woff2';
 
@@ -27,8 +27,8 @@ import InterRegularItalicWoff from '@fonts/Inter/Inter-Italic.woff';
 import InterRegularItalicWoff2 from '@fonts/Inter/Inter-Italic.woff2';
 import InterMediumItalicWoff from '@fonts/Inter/Inter-MediumItalic.woff';
 import InterMediumItalicWoff2 from '@fonts/Inter/Inter-MediumItalic.woff2';
-import InterSemiboldItalicWoff from '@fonts/Inter/Inter-SemiboldItalic.woff';
-import InterSemiboldItalicWoff2 from '@fonts/Inter/Inter-SemiboldItalic.woff2';
+import InterSemiboldItalicWoff from '@fonts/Inter/Inter-SemiBoldItalic.woff';
+import InterSemiboldItalicWoff2 from '@fonts/Inter/Inter-SemiBoldItalic.woff2';
 import InterBoldItalicWoff from '@fonts/Inter/Inter-BoldItalic.woff';
 import InterBoldItalicWoff2 from '@fonts/Inter/Inter-BoldItalic.woff2';
 
