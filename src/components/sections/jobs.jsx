@@ -10,6 +10,7 @@ const StyledJobs = styled.section`
   height: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   > ol {
     display: flex;

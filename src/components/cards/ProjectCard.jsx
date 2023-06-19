@@ -2,28 +2,7 @@ import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { styled } from "styled-components";
 import { Icon } from "@components/icons";
-import { ChipList, SectionCard, CardData } from '@elements'
-
-const HoverGlass = styled.span`
-  position: absolute;
-  width: calc(100% + 42px);
-  height: calc(100% + 42px);
-  left: -21px;
-  top: -21px;
-  border-radius: 6px;
-  border-top: 1px solid #fff1;
-  z-index: 1;
-  box-shadow: 0px 2px 14px -6px var(--navy-shadow) ;
-  background-color: #ffffff09;
-  opacity: 0;
-
-  &:hover { opacity: 1 };
-
-  &, * {
-    transition: all 150ms var(--easing);
-  }
-
-`
+import { ChipList, SectionCard, CardData, HoverGlass } from '@elements'
 
 const StyledCard = styled(SectionCard)`
   .gatsby-image-wrapper {
@@ -38,7 +17,7 @@ const StyledCard = styled(SectionCard)`
     transition: all 150ms var(--easing);
   }  
 
-  &:has(${HoverGlass}:hover) .gatsby-image-wrapper {
+  &:is(:has(.github:hover), :has(${HoverGlass}:hover)) .gatsby-image-wrapper {
     border: var(--img-border-hover);
   }
 `;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionCard, ChipList, CardData } from '@elements'
+import { SectionCard, ChipList, CardData, HoverGlass } from '@elements'
 import { styled } from 'styled-components'
 import { Icon } from "@components/icons";
 
@@ -14,13 +14,17 @@ const StyledCard = styled(SectionCard)`
     color: var(--dark-slate);
     font-weight: 600;
   }
-  
 `
 
 const Data = styled(CardData)`
 
+  &:has(${HoverGlass}:hover) svg {
+    transform: translate(4px, -4px);
+  }
+
   > h3 > a {
     color: var(--light-slate);
+    transition: all 150ms var(--easing);
     &:hover,
     &:focus-visible {
       color: var(--green);
@@ -49,7 +53,7 @@ const JobCard = ({job}) => {
           <a href={url}>
             {company}
             <Icon />
-            <span />
+            <HoverGlass />
           </a>
         </h3>
         <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
