@@ -28,6 +28,11 @@ const StyledContent = styled.div`
     width: 50%;
     padding: 0;
     padding-bottom: var(--body-padding);
+
+    &:has(#projects li:hover) #jobs li,
+    &:has(#jobs li:hover) #projects li {
+      opacity: .5;
+    }
   }
 `;
 

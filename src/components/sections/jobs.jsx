@@ -53,7 +53,7 @@ const Jobs = () => {
       <ol>
       { jobs.map(job => <JobCard job={job} />) }
       </ol>
-      <a href="/download/resume.pdf" download="Resume - Mariano Ibarra.pdf">
+      <a href="/download/resume.pdf">
         <FancyLink mt={56}>
           View Full Resume
         </FancyLink>
