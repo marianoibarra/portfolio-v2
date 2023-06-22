@@ -9,6 +9,10 @@ const CursorLight = styled.div`
   height: 100vh;
   pointer-events: none;
   z-index: 30;
+
+  @media screen and (max-width: 768px) {
+    opacity: 0;
+  }
 `;
 
 const MouseEffect = () => {
