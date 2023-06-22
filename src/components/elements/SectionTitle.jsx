@@ -2,7 +2,8 @@ import { styled } from "styled-components"
 
 export const SectionTitle = styled.h3`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  line-height: 100%;
   position: relative;
   margin: 10px 0 40px;
   width: 100%;
@@ -16,9 +17,9 @@ export const SectionTitle = styled.h3`
 
   &:before {
     position: relative;
-    bottom: -1px;
+    bottom: -3px;
     content: '0' counter(section) '.';
-    margin-right: 10px;
+    margin-right: 8px;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 1vw, var(--fz-xl));
@@ -34,22 +35,35 @@ export const SectionTitle = styled.h3`
     content: '';
     display: block;
     position: relative;
-    top: 2px;
+    bottom: 10px;
     width: 100%;
     height: 1px;
-    margin-left: 20px;
+    margin-left: 16px;
     background-color: var(--lightest-navy);
 
-    @media (max-width: 1080px) {
-      width: 200px;
-    }
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+    /* 
     @media (max-width: 600px) {
       margin-left: 10px;
+    } */
+  }
+
+  @media (max-width: 1024px) {
+    position: sticky;
+    width: 100vw;
+    font-family: var(--font-sans);
+    font-size: var(--fz-lg);
+    top: 0;
+    margin-left: -48px;
+    padding: 20px 48px 20px;
+    backdrop-filter: var(--title-blur);
+    background-color: var(--title-bg);
+    z-index: 20;
+
+    &:after {
+      bottom: 8px;
     }
   }
+
 `
 
 export default SectionTitle

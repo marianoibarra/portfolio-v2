@@ -2,13 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
-  width: 80%;
+  width: 100%;
+  max-width: 430px;
   font-size: var(--fz-sm);
   color: var(--dark-slate);
   margin-top: 128px;
   cursor: default;
   a {
     color: var(--slate);
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 64px;
   }
 `;
 

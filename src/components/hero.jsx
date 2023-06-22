@@ -12,6 +12,7 @@ const StyledHero = styled.div`
   h2 {
     margin-top: 8px;
     color: var(--slate);
+    width: 90%;
     line-height: 1.1;
     font-size: var(--fz-heading2);
   }

@@ -12,6 +12,7 @@ const StyledContent = styled.div`
   padding: 0px var(--body-padding);
   display: flex;
   counter-reset: section 0;
+  gap: 1rem;
 
   > header {
     position: sticky;
@@ -34,6 +35,26 @@ const StyledContent = styled.div`
       opacity: .5;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 48px;
+
+    > header {
+      position: relative;
+      width: 100%;
+      height: auto;
+      gap: 28px;
+      justify-content: flex-start;
+      padding-bottom: 0;
+    }
+
+    > main {
+      width: 100%;
+    }
+  }
+
+
 `;
 
 const Layout = ({children}) => {

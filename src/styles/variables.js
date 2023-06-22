@@ -39,6 +39,9 @@ const variables = css`
     --nav-height: 100px;
     --nav-scroll-height: 70px;
 
+    --title-blur: blur(8px);
+    --title-bg: rgba(15,23,42,.75);
+
     --tab-height: 42px;
     --tab-width: 120px;
 

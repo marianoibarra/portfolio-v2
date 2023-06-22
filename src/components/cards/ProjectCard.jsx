@@ -7,7 +7,8 @@ import { ChipList, SectionCard, CardData, HoverGlass } from '@elements'
 const StyledCard = styled(SectionCard)`
   .gatsby-image-wrapper {
     display: flex;
-    width: 120px;
+    width: 100%;
+    max-width: 200px;
     height: min-content;
     grid-column: 1/2;
     border-radius: 4px;
