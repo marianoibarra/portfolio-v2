@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     width: 100%;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
   }
 
   *,
@@ -52,6 +54,8 @@ const GlobalStyle = createGlobalStyle`
     scrollbar-width: thin;
     scrollbar-color: var(--dark-slate) var(--navy);
   }
+
+  
   ::-webkit-scrollbar {
     width: 12px;
   }
