@@ -23,11 +23,6 @@ export const SectionTitle = styled.h3`
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 1vw, var(--fz-xl));
     font-weight: 400;
-
-    @media (max-width: 480px) {
-      margin-bottom: -3px;
-      margin-right: 5px;
-    }
   }
 
   &:after {

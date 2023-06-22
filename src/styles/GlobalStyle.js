@@ -191,10 +191,6 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin-bottom: 96px;
     }
-
-    @media (max-width: 480px) {
-      padding: 60px 0;
-    }
   }
 
   h1,
