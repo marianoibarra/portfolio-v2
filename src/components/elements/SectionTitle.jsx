@@ -5,19 +5,18 @@ export const SectionTitle = styled.h3`
   align-items: flex-end;
   line-height: 100%;
   position: relative;
-  margin: 10px 0 40px;
+  margin-bottom: 40px;
   width: 100%;
   font-size: clamp(26px, 5vw, var(--fz-heading));
   white-space: nowrap;
   text-transform: capitalize;
   counter-increment: section;
   color: var(--white);
-  margin-top: 0;
   cursor: default;
 
   &:before {
     position: relative;
-    bottom: -3px;
+    bottom: -1px;
     content: '0' counter(section) '.';
     margin-right: 8px;
     color: var(--green);
@@ -53,8 +52,9 @@ export const SectionTitle = styled.h3`
     font-family: var(--font-sans);
     font-size: var(--fz-lg);
     top: 0;
+    margin-bottom: 24px;
     margin-left: -48px;
-    padding: 20px 48px 20px;
+    padding: 20px 48px;
     backdrop-filter: var(--title-blur);
     background-color: var(--title-bg);
     z-index: 20;
@@ -62,6 +62,11 @@ export const SectionTitle = styled.h3`
     &:after {
       bottom: 8px;
     }
+  }
+
+  @media (max-width: 768px) {
+    margin-left: -24px;
+    padding: 20px 24px;
   }
 
 `

@@ -7,11 +7,19 @@ const SectionCard = styled.li`
   grid-gap: 16px;
   transition: all 150ms var(--easing);
 
-  :has(~ &:hover), &:hover ~ & { opacity: .5 };
-
   svg {
     width: 18px;
     height: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    :has(~ &:hover), &:hover ~ & { opacity: .5 };
+  }
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 12px;
   }
 `
 

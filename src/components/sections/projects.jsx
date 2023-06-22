@@ -15,7 +15,7 @@ const StyledProjects = styled.section`
   > ol {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 64px;
   }
 `;
 

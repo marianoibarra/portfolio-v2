@@ -13,13 +13,20 @@ const StyledCard = styled(SectionCard)`
     text-transform: uppercase;
     color: var(--dark-slate);
     font-weight: 600;
+
+    @media screen and (max-width: 640px) {
+      grid-column: 1;
+      grid-row: 1;
+    }
   }
 `
 
 const Data = styled(CardData)`
 
-  &:has(${HoverGlass}:hover) svg {
-    transform: translate(4px, -4px);
+  @media screen and (min-width: 768px) {
+    &:has(${HoverGlass}:hover) svg {
+      transform: translate(4px, -4px);
+    }
   }
 
   > h3 > a {
@@ -40,6 +47,11 @@ const Data = styled(CardData)`
       content: "@"
     }
   }
+
+  @media screen and (max-width: 640px) {
+      grid-column: 1;
+      grid-row: 2;
+    }
 `
 
 const JobCard = ({job}) => {

@@ -21,6 +21,15 @@ const StyledCard = styled(SectionCard)`
   &:is(:has(.github:hover), :has(${HoverGlass}:hover)) .gatsby-image-wrapper {
     border: var(--img-border-hover);
   }
+
+  @media screen and (max-width: 640px) {
+    grid-gap: 24px;
+    .gatsby-image-wrapper {  
+      grid-column: 1;
+      grid-row: 2;
+      aspect-ratio: 16/10;
+    }
+  } 
 `;
 
 const Data = styled(CardData)`
@@ -37,14 +46,20 @@ const Data = styled(CardData)`
 
     &:hover { color: var(--green) };
   }
-
-  &:has(${HoverGlass}:hover) h3 svg {
-    transform: translate(4px, -4px);
+  @media screen and (min-width: 768px) {
+    &:has(.github:hover) ${HoverGlass} {
+      opacity: 1;
+    }
+    
+    &:has(${HoverGlass}:hover) h3 svg {
+      transform: translate(4px, -4px);
+    }
   }
 
-  &:has(.github:hover) ${HoverGlass} {
-    opacity: 1;
-  }
+  @media screen and (max-width: 640px) {
+    grid-column: 1;
+    grid-row: 1;
+  } 
 `
 
 const ProjectCard = ({ project }) => {

@@ -187,8 +187,9 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     padding: 96px 0 14px;
 
-    @media (max-width: 768px) {
-      padding: 80px 0;
+    @media (max-width: 1024px) {
+      padding: 0;
+      margin-bottom: 96px;
     }
 
     @media (max-width: 480px) {

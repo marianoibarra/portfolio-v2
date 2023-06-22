@@ -30,15 +30,17 @@ const StyledContent = styled.div`
     padding: 0;
     padding-bottom: var(--body-padding);
 
-    &:has(#projects li:hover) #jobs li,
-    &:has(#jobs li:hover) #projects li {
-      opacity: .5;
+    @media screen and (min-width: 768px) {
+      &:has(#projects li:hover) #jobs li,
+      &:has(#jobs li:hover) #projects li {
+        opacity: .5;
+      }
     }
   }
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    padding: 0 48px;
+    padding: 96px 48px;
 
     > header {
       position: relative;
@@ -46,12 +48,16 @@ const StyledContent = styled.div`
       height: auto;
       gap: 28px;
       justify-content: flex-start;
-      padding-bottom: 0;
+      padding: 0;
     }
 
     > main {
       width: 100%;
+      padding: 96px 0 0;
     }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 48px 24px;
   }
 
 
