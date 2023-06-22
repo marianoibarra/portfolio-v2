@@ -46,15 +46,6 @@ const Data = styled(CardData)`
 
     &:hover { color: var(--green) };
   }
-  @media screen and (min-width: 768px) {
-    &:has(.github:hover) ${HoverGlass} {
-      opacity: 1;
-    }
-    
-    &:has(${HoverGlass}:hover) h3 svg {
-      transform: translate(4px, -4px);
-    }
-  }
 
   @media screen and (max-width: 640px) {
     grid-column: 1;

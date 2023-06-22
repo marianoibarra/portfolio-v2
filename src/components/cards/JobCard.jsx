@@ -23,12 +23,6 @@ const StyledCard = styled(SectionCard)`
 
 const Data = styled(CardData)`
 
-  @media screen and (min-width: 768px) {
-    &:has(${HoverGlass}:hover) svg {
-      transform: translate(4px, -4px);
-    }
-  }
-
   > h3 > a {
     color: var(--light-slate);
     transition: all 150ms var(--easing);

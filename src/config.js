@@ -31,7 +31,7 @@ module.exports = {
   PROJECTS_LIMIT: 3,
   colors: {
     green: '#64ffda',
-    navy: '#0a192f',
+    navy: '#0f172a',
     darkNavy: '#020c1b',
   },
 }

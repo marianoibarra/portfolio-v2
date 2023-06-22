@@ -10,18 +10,49 @@ module.exports = {
     siteUrl: `https://www.marianoibarra.com`
   },
   //TO-DO "gatsby-plugin-google-gtag" config
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", 'gatsby-plugin-react-helmet', {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: 'Mariano Ibarra',
       short_name: 'Mariano Ibarra',
+      description: `Mariano Ibarra is a software engineer who builds exceptional digital experiences for the web.`,
+      lang: `en`,
       start_url: '/',
       background_color: config.colors.darkNavy,
       theme_color: config.colors.navy,
       display: 'minimal-ui',
-      icon: "src/images/icon.png"
+      icon: "src/images/icon.png",
+      icons: [
+        {
+          "src": "icons/favicons/favicon-16x16.png",
+          "sizes": "16x16",
+          "type": "image/png"
+        },
+        {
+          "src": "icons/favicons/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+        },
+        {
+          "src": "icons/favicons/icon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "icons/favicons/icon-512x512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        }
+      ]
     },
-  }, {
+  },
+  {
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: 'G-X1QCQ2EZWW',
+    },
+  }, 
+  {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "pages",
