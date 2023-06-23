@@ -11,9 +11,7 @@ const StyledNav = styled.nav`
 
   @media screen and (max-width: 1024px) {
     display: none;
-    
   }
-
 `
 
 const StyledLink = styled.li`

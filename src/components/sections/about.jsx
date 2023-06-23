@@ -51,13 +51,15 @@ const About = () => {
     "JavaScript (ES6+)",
     "TypeScript",
     "React",
+    "React Native",
     "Next.js",
     "Gatsby",
     "Node.js",
     "Express",
+    "Sequelize",
     "PostgreSQL",
-    "Mongo db",
-    "graphql",
+    "MongoDB",
+    "GraphQL",
   ];
 
   return (

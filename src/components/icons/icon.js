@@ -19,7 +19,7 @@ import {
 } from '@components/icons';
 import { IconArrow } from '.';
 
-const Icon = ({ name }) => {
+const Icon = ({ name=undefined }) => {
   switch (name) {
     case 'AppStore':
       return <IconAppStore />;
