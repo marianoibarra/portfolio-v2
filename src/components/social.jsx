@@ -24,9 +24,9 @@ const Social = () => {
   return (
     <StyledSocial>
       {
-        SOCIAL_MEDIA.map(({name, url}) => 
-          <li>
-            <a href={url}>
+        SOCIAL_MEDIA.map(({name, url}, i) => 
+          <li key={i}>
+            <a href={url} aria-label={name} target="_blank" rel="noopener noreferrer">
               <Icon name={name} />
             </a>
           </li>

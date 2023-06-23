@@ -82,7 +82,7 @@ const About = () => {
         <p>Here are a few technologies I’ve been working with recently:</p>
       </StyledText>
       <FancyList columns={3}>
-        {skills.map((skill) => <li>{skill}</li>)}
+        {skills.map((skill, i) => <li key={i}>{skill}</li>)}
       </FancyList>
     </section>
   );

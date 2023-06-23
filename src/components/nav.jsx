@@ -78,8 +78,8 @@ const Nav = () => {
   return (
     <StyledNav>
       <ul>
-        {NAV_LINKS.map(({name, url}) => 
-          <StyledLink active={Boolean(sectionActive === url)}>
+        {NAV_LINKS.map(({name, url}, i) => 
+          <StyledLink key={i} active={Boolean(sectionActive === url)}>
             <Link href={url}>
               <span/>
               <span>{name}</span>

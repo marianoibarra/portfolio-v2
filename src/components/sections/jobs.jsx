@@ -51,7 +51,7 @@ const Jobs = () => {
     <StyledJobs id="jobs">
       <SectionTitle>Experience</SectionTitle>
       <ol>
-      { jobs.map(job => <JobCard job={job} />) }
+      { jobs.map((job, i) => <JobCard key={i} job={job} />) }
       </ol>
       <a href="/download/resume.pdf">
         <FancyLink mt={56}>

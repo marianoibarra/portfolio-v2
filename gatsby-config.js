@@ -9,14 +9,11 @@ module.exports = {
     title: `Mariano Ibarra`,
     siteUrl: `https://www.marianoibarra.com`
   },
-  //TO-DO "gatsby-plugin-google-gtag" config
   plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", 'gatsby-plugin-react-helmet', {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: 'Mariano Ibarra',
       short_name: 'Mariano Ibarra',
-      description: `Mariano Ibarra is a software engineer who builds exceptional digital experiences for the web.`,
-      lang: `en`,
       start_url: '/',
       background_color: config.colors.darkNavy,
       theme_color: config.colors.navy,
@@ -127,6 +124,11 @@ module.exports = {
       extensions: [
         "js", "jsx"
       ],
+    }
+  },{
+    resolve: 'gatsby-plugin-html-attributes',
+    options: {
+      lang: 'en'
     }
   }]
 };

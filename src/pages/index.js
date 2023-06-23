@@ -9,6 +9,7 @@ export const Head = () => {
       <link rel="manifest" href="/site.webmanifest"></link>
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f172a"></link>
       <meta name="msapplication-TileColor" content="#0f172a"></meta>
+      <meta name="description" content="Mariano Ibarra is a software engineer who builds exceptional digital experiences for the web."></meta>
     </>
   )
 }
