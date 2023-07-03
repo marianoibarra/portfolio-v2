@@ -9,6 +9,7 @@ const CursorLight = styled.div`
   height: 100vh;
   pointer-events: none;
   z-index: 30;
+  background: radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%);
 `;
 
 const MouseEffect = () => {
