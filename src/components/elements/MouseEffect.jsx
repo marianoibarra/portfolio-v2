@@ -9,10 +9,6 @@ const CursorLight = styled.div`
   height: 100vh;
   pointer-events: none;
   z-index: 30;
-
-  @media screen and (max-width: 768px) {
-    opacity: 0;
-  }
 `;
 
 const MouseEffect = () => {
@@ -20,7 +16,11 @@ const MouseEffect = () => {
 
   useEffect(() => {
     const updateMousePosition = ({clientX: x, clientY: y}) => {
-      ref.current.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+      if(window.matchMedia('(min-width: 768px)').matches) {
+        ref.current.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+      } else {
+        ref.current.style.background = `radial-gradient(600px at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)`;
+      }
     };
     window.addEventListener("mousemove", updateMousePosition);
     return () => {
