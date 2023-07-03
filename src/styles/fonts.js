@@ -79,7 +79,7 @@ const createFontFaces = (family, style = 'normal') => {
             url(${woff}) format('woff');
         font-weight: ${weight};
         font-style: ${style};
-        font-display: swap;
+        font-display: auto;
       }
     `;
   }
