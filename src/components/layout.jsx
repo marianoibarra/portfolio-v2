@@ -1,8 +1,8 @@
-import React from 'react'
-import { Head, Nav, Social, Hero, Footer } from '@components';
-import { MouseEffect } from '@elements';
-import { GlobalStyle, theme } from '@styles';
-import { ThemeProvider, styled } from 'styled-components';
+import React from "react";
+import { Nav, Social, Hero, Footer } from "@components";
+import { MouseEffect } from "@elements";
+import { GlobalStyle, theme } from "@styles";
+import { ThemeProvider, styled } from "styled-components";
 
 const StyledContent = styled.div`
   width: 100%;
@@ -33,7 +33,7 @@ const StyledContent = styled.div`
     @media screen and (min-width: 768px) {
       &:has(#projects li:hover) #jobs li,
       &:has(#jobs li:hover) #projects li {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }
@@ -59,33 +59,28 @@ const StyledContent = styled.div`
   @media screen and (max-width: 768px) {
     padding: 48px 24px;
   }
-
-
 `;
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <>
-      <Head />
-      <div id="root">
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <MouseEffect />
-          <StyledContent>
-            <header>
-              <Hero />
-              <Nav />
-              <Social />
-            </header>
-            <main id='content'>
-              { children }
-              <Footer />
-            </main>
-          </StyledContent>
-        </ThemeProvider>
-      </div>
-    </>
-  )
-}
+    <div id="root">
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MouseEffect />
+        <StyledContent>
+          <header>
+            <Hero />
+            <Nav />
+            <Social />
+          </header>
+          <main id="content">
+            {children}
+            <Footer />
+          </main>
+        </StyledContent>
+      </ThemeProvider>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

@@ -9,7 +9,7 @@ module.exports = {
     title: `Mariano Ibarra`,
     siteUrl: `https://www.marianoibarra.com`
   },
-  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", 'gatsby-plugin-react-helmet', {
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-plugin-sitemap", 'gatsby-plugin-react-helmet', `gatsby-plugin-preload-fonts`, {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: 'Mariano Ibarra',

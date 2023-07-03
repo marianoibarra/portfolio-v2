@@ -1,19 +1,5 @@
 import { css } from 'styled-components';
 
-import CalibreRegularWoff from '@fonts/Calibre/Calibre-Regular.woff';
-import CalibreRegularWoff2 from '@fonts/Calibre/Calibre-Regular.woff2';
-import CalibreMediumWoff from '@fonts/Calibre/Calibre-Medium.woff';
-import CalibreMediumWoff2 from '@fonts/Calibre/Calibre-Medium.woff2';
-import CalibreSemiboldWoff from '@fonts/Calibre/Calibre-Semibold.woff';
-import CalibreSemiboldWoff2 from '@fonts/Calibre/Calibre-Semibold.woff2';
-
-import CalibreRegularItalicWoff from '@fonts/Calibre/Calibre-RegularItalic.woff';
-import CalibreRegularItalicWoff2 from '@fonts/Calibre/Calibre-RegularItalic.woff2';
-import CalibreMediumItalicWoff from '@fonts/Calibre/Calibre-MediumItalic.woff';
-import CalibreMediumItalicWoff2 from '@fonts/Calibre/Calibre-MediumItalic.woff2';
-import CalibreSemiboldItalicWoff from '@fonts/Calibre/Calibre-SemiboldItalic.woff';
-import CalibreSemiboldItalicWoff2 from '@fonts/Calibre/Calibre-SemiboldItalic.woff2';
-
 import InterRegularWoff from '@fonts/Inter/Inter-Regular.woff';
 import InterRegularWoff2 from '@fonts/Inter/Inter-Regular.woff2';
 import InterMediumWoff from '@fonts/Inter/Inter-Medium.woff';
@@ -42,17 +28,6 @@ import SFMonoRegularItalicWoff2 from '@fonts/SFMono/SFMono-RegularItalic.woff2';
 import SFMonoSemiboldItalicWoff from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWoff2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
-const calibreNormalWeights = {
-  400: [CalibreRegularWoff, CalibreRegularWoff2],
-  500: [CalibreMediumWoff, CalibreMediumWoff2],
-  600: [CalibreSemiboldWoff, CalibreSemiboldWoff2],
-};
-
-const calibreItalicWeights = {
-  400: [CalibreRegularItalicWoff, CalibreRegularItalicWoff2],
-  500: [CalibreMediumItalicWoff, CalibreMediumItalicWoff2],
-  600: [CalibreSemiboldItalicWoff, CalibreSemiboldItalicWoff2],
-};
 
 const interNormalWeights = {
   400: [InterRegularWoff, InterRegularWoff2],
@@ -76,12 +51,6 @@ const sfMonoNormalWeights = {
 const sfMonoItalicWeights = {
   400: [SFMonoRegularItalicWoff, SFMonoRegularItalicWoff2],
   600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
-};
-
-const calibre = {
-  name: 'Calibre',
-  normal: calibreNormalWeights,
-  italic: calibreItalicWeights,
 };
 
 const inter = {
@@ -118,9 +87,6 @@ const createFontFaces = (family, style = 'normal') => {
   return styles;
 };
 
-const calibreNormal = createFontFaces(calibre);
-const calibreItalic = createFontFaces(calibre, 'italic');
-
 const interNormal = createFontFaces(inter);
 const interItalic = createFontFaces(inter, 'italic');
 
@@ -128,7 +94,7 @@ const sfMonoNormal = createFontFaces(sfMono);
 const sfMonoItalic = createFontFaces(sfMono, 'italic');
 
 const Fonts = css`
-  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic + interNormal + interItalic}
+  ${sfMonoNormal + sfMonoItalic + interNormal + interItalic}
 `;
 
 export default Fonts;
